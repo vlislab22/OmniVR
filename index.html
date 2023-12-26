@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>OmniZoomer</title>
+    <title>OmniVR</title>
     <meta name="author" content="Zidong Cao">
-    <meta name="description" content="Project page of DOT paper, ICCV 2023">
+    <meta name="description" content="Project page of OmniVR paper">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/png" href="eccv_logo.png">
     <!-- Format -->
@@ -26,7 +26,7 @@
     <div class="container" id="main">
         <div class="row">
             <h1 class="col-md-12 text-center">
-                OmniZoomer: Learning to Move and Zoom in on Sphere at High-Resolution<br /> 
+                Learning High-Quality Navigation and Zooming on Omnidirectional Images in Virtual Reality<br /> 
 <!--                 <small>
                     
                 </small> -->
@@ -37,7 +37,6 @@
             <div class="col-md-12 text-center">
                 <ul class="list-inline">
                     <li>
-                        <a href="https://scholar.google.com/citations?user=q1FcZzIAAAAJ&hl=zh-CN" >
                          Zidong Cao
                         </a>
                         <br /> AI Thrust, HKUST(GZ)
@@ -46,15 +45,20 @@
                     </li>
 
                     <li>
-			    <a href="https://scholar.google.com/citations?user=QNlF0DsAAAAJ&hl=zh-CN" >
-                        Hao Ai
+                        Zhan Wang
+                      </a> 
+                      <br /> CMA Thrust, HKUST(GZ)
+                      <br /> &nbsp &nbsp
+                    </li>
+
+			<li>
+                        Yexin Liu
                       </a> 
                       <br /> AI Thrust, HKUST(GZ)
                       <br /> &nbsp &nbsp
                     </li>
 
                     <li>
-                        <a href="https://scholar.google.com/citations?user=50194vkAAAAJ&hl=zh-CN" >
                            Yan-Pei Cao
                         </a>
                         <br /> ARC Lab, Tencent PCG
@@ -63,24 +67,18 @@
                     </li>
                   
                     <li>
-                        <a href="https://scholar.google.com/citations?hl=zh-CN&user=4oXBp9UAAAAJ">
                            Ying Shan
                         </a>
                         <br /> ARC Lab, Tencent PCG
                       <br /> &nbsp &nbsp
                     </li>
-
-                  <li>
-                        <a href="https://scholar.google.com/citations?hl=zh-CN&user=mk-F69UAAAAJ" >
-                           Xiaohu Qie
+		<li>
+                           Wei Zeng
                         </a>
-                        <br /> ARC Lab, Tencent PCG
-                    <br /> &nbsp &nbsp
-
-                    </li>
+                        <br /> CMA Thrust, HKUST(GZ) 
+			            <br/> Dept. of CSE, HKUST 
 
                   <li>
-                        <a href="https://scholar.google.com/citations?user=SReb2csAAAAJ&hl=zh-CN" >
                            Lin Wang
                         </a>
                         <br /> AI Thrust, HKUST(GZ) 
@@ -98,7 +96,6 @@
                 <div class="col-md-8 col-md-offset-2 text-center">
                     <ul class="nav nav-pills nav-justified">
                         <li>
-			    <a href="https://arxiv.org/abs/2308.08114">
                             <img src="./image/arxiv.png" height="100px"><br>
                                 <h4><strong>Paper</strong></h4>
                             </a>
@@ -135,66 +132,12 @@
                     Abstract
                 </h3>
                 <p class="text-justify">
-                    Omnidirectional images (ODIs) have become increasingly popular, as their large field-of-view (FoV) can offer viewers the chance to freely choose the view directions in immersive environments such as virtual reality. The M\"obius transformation is typically employed to further provide the opportunity for movement and zoom on ODIs, but applying it to the image level often results in blurry effect and aliasing problem. In this paper, we propose a novel deep learning-based approach, called \textbf{OmniZoomer}, to incorporate the M\"obius transformation into the network for movement and zoom on ODIs. By learning various transformed feature maps under different conditions, the network is enhanced to handle the increasing edge curvatures, which alleviates the blurry effect. Moreover, to address the aliasing problem, we propose two key components. Firstly, to compensate for the lack of pixels for describing curves, we enhance the feature maps in the high-resolution (HR) space and calculate the transformed index map with a spatial index generation module. Secondly, considering that ODIs are inherently represented in the spherical space, we propose a spherical resampling module that combines the index map and HR feature maps to transform the feature maps for better spherical correlation. The transformed feature maps are decoded to output a zoomed ODI. Experiments show that our method can produce HR and high-quality ODIs with the flexibility to move and zoom in to the object of interest.
-                </p>
+                   Omnidirectional images (ODIs) provide users with the freedom to navigate immersive environments as if they were physically present. Nonetheless, this sense of immersion can be greatly compromised by a blur effect that masks details in ODIs, hampering the user's ability to engage with objects of interest, detracting from the immersive experience, and causing discomfort. In this paper, we present a novel system, called \textit{OmniVR}, designed to enhance visual clarity during VR navigation. Our system enables users to effortlessly locate and zoom in to the objects of interest in VR, even if these are rendered unclear due to size or other factors. It captures user commands for navigation and zoom, converting these inputs into parameters for the M\"obius transformation matrix. Leveraging these parameters, the visual fidelity of the ODI is refined using a learning-based algorithm. The resultant ODI is presented within the VR environment, effectively reducing blur and increasing user engagement. To verify the effectiveness of our system, we first evaluate our algorithm with state-of-the-art methods on public datasets, which achieves the best performance. Furthermore, we undertake a comprehensive user study to evaluate viewer experiences across diverse scenarios using several metrics and to gather their qualitative feedback from multiple perspectives. The outcomes of this study reveal that our system significantly enhances user engagement by 1) Improving the viewers' recognition and comprehension of scenarios, 2) Reducing discomfort, such as mental and physical costs, 3) Improving the overall immersive experience, thereby making navigation and zoom more user-friendly.</p>
             </div>
         </div>
 
- 
-
-        <!-- ##### Results #####-->
-
-     <div class="row">   
-	     <div class="col-md-8 col-md-offset-2">
-          <h3>
-              Framework
-          </h3>
-          <p class="text-justify">
-            Overall framework of our OmniZoomer.
-          </p>
-		  <img src="./image/framework.png" class="img-responsive" alt="vis_res" class="center"><br>
-    </div>  
-	     
-     <div class="col-md-8 col-md-offset-2">
-          <h3>
-              Visual comparison on continous zoom
-          </h3>
-          <p class="text-justify">
-            From top to bottom: spherical images predicted from OmniZoomer, equirectangular projection (ERP) from spherical images, and perspective projection from ERP images with a specific field-of-view (FoV), w.r.t. the <span style="color:blue">blue</span> regions. From left to right: increasing zoom levels. Our approach can move to the object of interest, e.g., the sculpture, and freely zoom in and zoom out on omnidirectional images with clear textural details and preserved shapes, even in large zoom levels.
-
-          </p>
-		  <img src="./image/show1.png" class="img-responsive" alt="vis_res" class="center"><br>
-    </div>   
-    <div class="col-md-8 col-md-offset-2">
-        <h3>
-            Visual comparison on different image enhancement methods
-        </h3>
-        <p class="text-justify">
-           From top to bottom: 
-equirectangular projection (ERP) of omnidirectional images, perspective projection from ERP images with a specific field-of-view (FoV), w.r.t. the <span style="color:blue">blue</span> regions, and results from <span style="color:Green">LAU-Net</span>, <span style="color:Red">OmniZoomer</span> and <span style="color:Purple">Ground truth</span>. From left to right: increasing zoom levels.  
-
-        </p>
-        <img src="./image/show2.png" class="img-responsive" alt="vis_res" class="center"><br>
-    </div>     
-    </div>
-
 
 		      
-    	<div class="row">      
-     <div class="col-md-8 col-md-offset-2">
-          <h3>
-              Demo 
-          </h3>   
-    </div>   
-      
-    <div class="col-md-8 col-md-offset-2">
-
-            <video width="600"  controls >
-                <source src="./video/demo.mp4" type="video/mp4" class="center">
-              Your browser does not support HTML video.
-            </video>   
-    </div>          
-      </div>
    <!-- ##### BibTex #####-->
         <hr>
         <div class="row">
@@ -206,10 +149,10 @@ equirectangular projection (ERP) of omnidirectional images, perspective projecti
                 <div class="row align-items-center">
                     <div class="col py-3">
                         <pre class="border">             
-@inproceedings{cao2023omnizoomer,
-  title={OmniZoomer: Learning to Move and Zoom in on Sphere at High-Resolution},
-  author={Zidong Cao, Hao Ai, Yan-pei Cao, Ying Shan, Xiaohu Qie, and Lin Wang},
-  booktitle = {IEEE International Conference on Computer Vision (ICCV)},
+@inproceedings{cao2023omnivr,
+  title={Learning High-Quality Navigation and Zooming on Omnidirectional Images in Virtual Reality},
+  author={Zidong Cao, Zhan Wang, Yexin Liu, Yan-pei Cao, Ying Shan, Wei Zeng, and Lin Wang},
+  booktitle = {Arxiv},
   year={2023}
 }
 </pre>
