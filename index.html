@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>OmniZoomer</title>
+    <meta name="author" content="Zidong Cao">
+    <meta name="description" content="Project page of DOT paper, ICCV 2023">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="eccv_logo.png">
+    <!-- Format -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="../format/app.css">
+    <link rel="stylesheet" href="../format/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="../format/app.js"></script>
+
+  </head>
+
+  <body style=“text-align: center;”>
+    <div class="container" id="main">
+        <div class="row">
+            <h1 class="col-md-12 text-center">
+                OmniZoomer: Learning to Move and Zoom in on Sphere at High-Resolution<br /> 
+<!--                 <small>
+                    
+                </small> -->
+            </h1>
+        </div>
+	    
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=q1FcZzIAAAAJ&hl=zh-CN" >
+                         Zidong Cao
+                        </a>
+                        <br /> AI Thrust, HKUST(GZ)
+                        <br /> &nbsp &nbsp
+
+                    </li>
+
+                    <li>
+			    <a href="https://scholar.google.com/citations?user=QNlF0DsAAAAJ&hl=zh-CN" >
+                        Hao Ai
+                      </a> 
+                      <br /> AI Thrust, HKUST(GZ)
+                      <br /> &nbsp &nbsp
+                    </li>
+
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=50194vkAAAAJ&hl=zh-CN" >
+                           Yan-Pei Cao
+                        </a>
+                        <br /> ARC Lab, Tencent PCG
+                      <br /> &nbsp &nbsp
+
+                    </li>
+                  
+                    <li>
+                        <a href="https://scholar.google.com/citations?hl=zh-CN&user=4oXBp9UAAAAJ">
+                           Ying Shan
+                        </a>
+                        <br /> ARC Lab, Tencent PCG
+                      <br /> &nbsp &nbsp
+                    </li>
+
+                  <li>
+                        <a href="https://scholar.google.com/citations?hl=zh-CN&user=mk-F69UAAAAJ" >
+                           Xiaohu Qie
+                        </a>
+                        <br /> ARC Lab, Tencent PCG
+                    <br /> &nbsp &nbsp
+
+                    </li>
+
+                  <li>
+                        <a href="https://scholar.google.com/citations?user=SReb2csAAAAJ&hl=zh-CN" >
+                           Lin Wang
+                        </a>
+                        <br /> AI Thrust, HKUST(GZ) 
+			            <br/> Dept. of CSE, HKUST 
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <!-- ##### Elements #####-->
+        <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+			    <a href="https://arxiv.org/abs/2308.08114">
+                            <img src="./image/arxiv.png" height="100px"><br>
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+
+                            <img src="./image/youtube_icon.jpg" height="100px"><br>
+                                <h4><strong>Video</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                
+                            <img src="./image/github_icon.jpg" height="100px"><br>
+                                <h4><strong>Code</strong></h4>
+                            </a>
+                        </li>
+                     
+                        <li>
+                            <a href="https://vlislab22.github.io/vlislab/">
+                            <img src="./image/lab_logo.png" height="100px"><br>
+                                <h4><strong>Vlislab</strong></h4>
+                            </a>
+                        </li>                       
+                      
+                    </ul>
+                </div>
+        </div>
+
+
+        <!-- ##### Abstract #####-->
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    Omnidirectional images (ODIs) have become increasingly popular, as their large field-of-view (FoV) can offer viewers the chance to freely choose the view directions in immersive environments such as virtual reality. The M\"obius transformation is typically employed to further provide the opportunity for movement and zoom on ODIs, but applying it to the image level often results in blurry effect and aliasing problem. In this paper, we propose a novel deep learning-based approach, called \textbf{OmniZoomer}, to incorporate the M\"obius transformation into the network for movement and zoom on ODIs. By learning various transformed feature maps under different conditions, the network is enhanced to handle the increasing edge curvatures, which alleviates the blurry effect. Moreover, to address the aliasing problem, we propose two key components. Firstly, to compensate for the lack of pixels for describing curves, we enhance the feature maps in the high-resolution (HR) space and calculate the transformed index map with a spatial index generation module. Secondly, considering that ODIs are inherently represented in the spherical space, we propose a spherical resampling module that combines the index map and HR feature maps to transform the feature maps for better spherical correlation. The transformed feature maps are decoded to output a zoomed ODI. Experiments show that our method can produce HR and high-quality ODIs with the flexibility to move and zoom in to the object of interest.
+                </p>
+            </div>
+        </div>
+
+ 
+
+        <!-- ##### Results #####-->
+
+     <div class="row">   
+	     <div class="col-md-8 col-md-offset-2">
+          <h3>
+              Framework
+          </h3>
+          <p class="text-justify">
+            Overall framework of our OmniZoomer.
+          </p>
+		  <img src="./image/framework.png" class="img-responsive" alt="vis_res" class="center"><br>
+    </div>  
+	     
+     <div class="col-md-8 col-md-offset-2">
+          <h3>
+              Visual comparison on continous zoom
+          </h3>
+          <p class="text-justify">
+            From top to bottom: spherical images predicted from OmniZoomer, equirectangular projection (ERP) from spherical images, and perspective projection from ERP images with a specific field-of-view (FoV), w.r.t. the <span style="color:blue">blue</span> regions. From left to right: increasing zoom levels. Our approach can move to the object of interest, e.g., the sculpture, and freely zoom in and zoom out on omnidirectional images with clear textural details and preserved shapes, even in large zoom levels.
+
+          </p>
+		  <img src="./image/show1.png" class="img-responsive" alt="vis_res" class="center"><br>
+    </div>   
+    <div class="col-md-8 col-md-offset-2">
+        <h3>
+            Visual comparison on different image enhancement methods
+        </h3>
+        <p class="text-justify">
+           From top to bottom: 
+equirectangular projection (ERP) of omnidirectional images, perspective projection from ERP images with a specific field-of-view (FoV), w.r.t. the <span style="color:blue">blue</span> regions, and results from <span style="color:Green">LAU-Net</span>, <span style="color:Red">OmniZoomer</span> and <span style="color:Purple">Ground truth</span>. From left to right: increasing zoom levels.  
+
+        </p>
+        <img src="./image/show2.png" class="img-responsive" alt="vis_res" class="center"><br>
+    </div>     
+    </div>
+
+
+		      
+    	<div class="row">      
+     <div class="col-md-8 col-md-offset-2">
+          <h3>
+              Demo 
+          </h3>   
+    </div>   
+      
+    <div class="col-md-8 col-md-offset-2">
+
+            <video width="600"  controls >
+                <source src="./video/demo.mp4" type="video/mp4" class="center">
+              Your browser does not support HTML video.
+            </video>   
+    </div>          
+      </div>
+   <!-- ##### BibTex #####-->
+        <hr>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    BibTeX
+                </h3>
+ 
+                <div class="row align-items-center">
+                    <div class="col py-3">
+                        <pre class="border">             
+@inproceedings{cao2023omnizoomer,
+  title={OmniZoomer: Learning to Move and Zoom in on Sphere at High-Resolution},
+  author={Zidong Cao, Hao Ai, Yan-pei Cao, Ying Shan, Xiaohu Qie, and Lin Wang},
+  booktitle = {IEEE International Conference on Computer Vision (ICCV)},
+  year={2023}
+}
+</pre>
+                    </div>
+                </div>
+              
+    
+          </div>
+          
+        </div>
+    </div>
+</body>
+</html>
